@@ -6,7 +6,11 @@ const jwt = require("jwt-then");
 
 exports.register = async (req, res) => {
     const { name, email, password } = req.body;
-    const emailRegex = /[@gmail.com|@yahoo.com]/;
+    const emailRegex = /@gmail.com|@yahoo.com/;
+    const userexist = await User.findOne({
+        email
+    });
+    if (userexist) throw "Email already exists ";
     if (emailRegex.test(email)) throw "Email is not valid";
     if (password.length < 8) throw "Password must be above 8 letters";
     const user = new User({ name, email, password: sha256(password + process.env.SALT) });
