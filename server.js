@@ -21,5 +21,5 @@ require("./models/Message");
 const app = require('./app');
 
 app.listen(8000, () => {
-    console.log("Serveris up running");
+    console.log("Server is up");
 });

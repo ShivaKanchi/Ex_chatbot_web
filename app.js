@@ -1,9 +1,9 @@
 const express = require('express');
-
+const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //routes
-app.use(require("./routes/user"));
+app.use("/user", require("./routes/user"));
 //error handlers
 const errorhandlers = require("./handlers/errorHandler");
 app.use(errorhandlers.notFound);
