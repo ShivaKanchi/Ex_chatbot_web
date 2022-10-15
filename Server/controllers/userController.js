@@ -26,7 +26,7 @@ exports.login = async (req, res) => {
         password: sha256(password + process.env.SALT)
     });
     if (!user) throw "Email and password invalid ";
-    const token = jwt.sign({ id: user.id }, process.env.SECRET);
+    const token = await jwt.sign({ id: user.id }, process.env.SECRET);
     res.json({
         message: "User logged in successfully",
         token
