@@ -2,8 +2,10 @@ import React from "react";
 
 const login = () => {
     return (
-        <div>
-            Login
+        <div className="card">
+            <div className="cardheader">
+                Login
+            </div>
         </div>
     );
 }
