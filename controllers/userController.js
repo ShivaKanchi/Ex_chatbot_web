@@ -5,7 +5,7 @@ const jwt = require("jwt-then");
 
 exports.register = async (req, res) => {
     const { name, email, password } = req.body;
-    const emailRegex = /@gmail.com|@yahoo.com/;
+    const emailRegex = /@gmail.com \ @yahoo.com/;
     const userexist = await User.findOne({
         email
     });
@@ -31,4 +31,5 @@ exports.login = async (req, res) => {
         message: "User logged in successfully",
         token
     });
+    console.log(token);
 };
