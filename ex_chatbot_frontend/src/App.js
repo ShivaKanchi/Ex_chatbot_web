@@ -1,18 +1,18 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import dashboard from "./pages/dashboard.js";
-import login from "./pages/login.js";
-import register from "./pages/register.js";
+import { Routes, Route } from "react-router-dom";
+import dashboard from "./pages/Dashboardpage";
+import login from "../src/pages/Loginpage";
+import register from "../src/pages/Registerpage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/register" component={register} />
-        <Route path="/login" component={login} />
-        <Route path="/dashboard" component={dashboard} />
-      </Routes  >
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<h1>Helo</h1>} />
+      <Route path="/register" element={register} />
+      <Route path="/login" element={login} />
+      <Route path="/dashboard" element={dashboard} />
+    </Routes  >
+
   );
 }
 
