@@ -1,8 +1,8 @@
 import React from "react";
 
-const Registerpage = () => {
+const Registerpage = (props) => {
     return (
-        <div className="card">
+        <div>
             <div className="cardheader">
                 Register
             </div>
@@ -23,6 +23,7 @@ const Registerpage = () => {
             </div>
         </div>
     );
+
 }
 
 export default Registerpage;
