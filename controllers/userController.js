@@ -3,7 +3,6 @@ const User = mongoose.model("User");
 const sha256 = require("js-sha256");
 const jwt = require("jwt-then");
 
-
 exports.register = async (req, res) => {
     const { name, email, password } = req.body;
     const emailRegex = /@gmail.com|@yahoo.com/;

@@ -4,6 +4,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //routes
 app.use("/user", require("./routes/user"));
+app.use("/chatroom", require("./routes/chatroom"));
 //error handlers
 const errorhandlers = require("./handlers/errorHandler");
 app.use(errorhandlers.notFound);
