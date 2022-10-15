@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
         const payload = jwt.verify(token, process.env.SECRET);
         next();
     } catch (err) {
-        res.json({
+        res.status(401).json({
             message: "Forbidden"
         })
     }
